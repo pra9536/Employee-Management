@@ -90,5 +90,5 @@ npm run dev
 App starts at `http://localhost:5173`
 
 ## Screenshots
-<img width="1919" height="983" alt="image" src="https://github.com/pra9536/Employee-Management/employee-frontend/src/assets/1.png" />
-<img width="1919" height="983" alt="image" src="https://github.com/pra9536/Employee-Management/employee-frontend/src/assets/2.png" />
+<img width="1919" height="983" alt="image" src="https://github.com/pra9536/Employee-Management/blob/main/employee-frontend/src/assets/1.png" />
+<img width="1919" height="983" alt="image" src="https://github.com/pra9536/Employee-Management/blob/main/employee-frontend/src/assets/2.png" />
