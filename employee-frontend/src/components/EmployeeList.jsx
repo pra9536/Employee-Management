@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
@@ -50,11 +50,11 @@ const EmployeeList = () => {
     }
 
     return (
-        <div style={{padding: '20px'}}>
+        <div style={{padding: '15px'}}>
             <ToastContainer position="top-right" autoClose={3000}/>
             <h2>Employee Management System</h2>
 
-            <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: '15px'}}>
+            <div className="header-row" style={{display: 'flex', justifyContent: 'space-between', marginBottom: '15px'}}>
 
             <button onClick={() => navigate('/add-employee')}
                 style={{
@@ -74,7 +74,7 @@ const EmployeeList = () => {
                 onChange={handleSearch}
                 style={{
                     padding: '8px',
-                    width: '300px',
+                    width: '100%',
                     borderRadius: '4px',
                     border: '1px solid #ddd'
                 }} />
@@ -82,6 +82,7 @@ const EmployeeList = () => {
 
                 <p style={{color: '#666'}}>Total Employees: {totalElements}</p>
 
+            <div className="table-container">
                 <table style={{width: '100%', borderCollapse: 'collapse'}}>
                     <thead>
                         <tr style={{backgroundColor: '#f2f2f2'}}>
@@ -112,6 +113,7 @@ const EmployeeList = () => {
                                 <td style={tableCellStyle}>{employee.department}</td>
                                 <td style={tableCellStyle}>{employee.position}</td>
                                 <td style={tableCellStyle}>
+                                    <div className="actions-buttons">
                                     <button 
                                     onClick={() => navigate(`/edit-employee/${employee.id}`)}
                                     style={{
@@ -137,14 +139,16 @@ const EmployeeList = () => {
                                     }}>
                                         Delete
                                     </button>
+                                    </div>
                                 </td>
                             </tr>
                         ))
                     )}
                     </tbody>
                 </table>
+                </div>
 
-                <div style={{marginTop: '20px', display: 'flex', gap: '8px', alignItems: 'center'}}>
+                <div className="pagination" style={{marginTop: '20px', display: 'flex', gap: '8px', alignItems: 'center'}}>
                     <button
                     onClick={() => setCurrentPage(prev => Math.max(prev - 1, 0))}
                     disabled={currentPage === 0}
